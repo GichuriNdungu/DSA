@@ -12,8 +12,8 @@ class linked_list:
     def insert_at_start(self, new_data):
         '''method to insert a new element at the start of the list'''
         new_node = node(data=new_data) # create a new node with data as new_data
-        new_node.next = self.head # parameter next is set to the head
-        self.head = new_node # the head is set to the new node just created.
+        new_node.next = self.head # next now points to the memory address of the initial first item
+        self.head = new_node # now we change the head to point to the address of the newly created item.
     def insert_at_end(self, new_data):
         '''method to insert new element at the end of a list'''
         new_node = node(data=new_data)
@@ -85,5 +85,5 @@ if __name__ == '__main__':
     llist.print_list()
 
     llist.insert_at_middle('brown')
-    llist.delete_from_end()
+   
     llist.print_list()
