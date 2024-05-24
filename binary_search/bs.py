@@ -44,6 +44,24 @@ def bs_recursive(arr, target, s, e):
         # The target is in the right of arr, so start will be m+1
         return bs_recursive(arr, target, m+1, e)
     
-arr = [1, 2, 4, 5, 6, 7, 10]
-target = 4
-print(bs_recursive(arr, target, 0, len(arr)-1))
+def print_num(num):
+    '''print numbers below a certain number'''
+    print(num)
+    if num == 0:
+        return
+    print_num(num-1)
+
+def print_above(num):
+    '''print numbers above num'''
+    if num == 0:
+        return
+    print_above(num-1)
+    print(num)
+def print_both(num):
+    if num == 0:
+        return
+    print(num)
+    print_both(num-1)
+    print(num)
+
+print_both(4)
