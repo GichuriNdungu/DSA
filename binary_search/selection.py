@@ -2,6 +2,7 @@
 
 def find_smallest(arr):
     '''find the smallest Item in an array'''
+    #initialize smallest as the first item of arr
     smallest = arr[0]
     smallest_index = 0
     for element in range (1, len(arr)):
