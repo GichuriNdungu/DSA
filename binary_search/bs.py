@@ -64,4 +64,23 @@ def print_both(num):
     print_both(num-1)
     print(num)
 
-print_both(4)
+def factorial(n):
+    #number multiplied by every number below 
+    # factorial n = n * f(n-1):
+    if n <= 1:
+        return 1
+    else:
+        return(n * factorial(n-1))
+def sum(num):
+    '''returns the sum of numbers below number'''
+    if num <=1:
+        return 1
+    return num + sum(num-1)
+
+def cumsum(n):
+    '''Get the sum of the numbers in a digit'''
+    if n == 0:
+        return 0 
+    return (n%10) + cumsum(n//10)
+
+#quotient is gotten by using a double divisor
