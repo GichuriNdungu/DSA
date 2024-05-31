@@ -78,9 +78,45 @@ def sum(num):
     return num + sum(num-1)
 
 def cumsum(n):
-    '''Get the sum of the numbers in a digit'''
+    '''Get the sum of the digits in a number'''
     if n == 0:
         return 0 
     return (n%10) + cumsum(n//10)
 
 #quotient is gotten by using a double divisor
+
+def digitprod(n):
+    '''product of digits in a number'''
+    #base case 
+    if (n%10 == n):
+        return n
+
+    return (n%10) * digitprod(n//10)
+
+
+class rev:
+    sum = 0
+    def revnum(self, n):
+        '''reverses a number such that the last digit is the first'''
+        
+        if (n == 0):
+            return
+        self.sum = (self.sum *10) + n%10
+        self.revnum(n//10)
+        return self.sum
+    
+    
+    
+
+class zero_score():
+    count = 0
+    def num_zero(self, num):
+        if num//10 <= 0:
+            return
+        if num %10 == 0:
+            self.count += 1
+        self.num_zero(num//10)
+        return self.count
+
+num = zero_score()
+print(num.num_zero(3000000))
