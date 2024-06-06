@@ -118,5 +118,15 @@ class zero_score():
         self.num_zero(num//10)
         return self.count
 
-num = zero_score()
-print(num.num_zero(3000000))
+def steps(num, count):
+    '''count steps to reduce number to 0'''
+    #base
+    if num == 0:
+        return count
+    #recursieve
+    rem = num //2
+    if num % 2 == 0:
+        return steps(rem, (count + 1))
+    else:
+        return steps((num -1), (count +1))
+
